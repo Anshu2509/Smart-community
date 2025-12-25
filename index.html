@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Issue Tracker – Government IoT System</title>
+
+<!-- Google Technology -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+Smart Issue Tracker – Government IoT Monitoring System
+</header>
+
+<div class="container">
+
+<!-- ROLE SELECTION -->
+<div class="panel">
+  <h3>Select Your Role</h3>
+  <select id="userRole">
+    <option value="">Choose Role</option>
+    <option>Citizen</option>
+    <option>Government Official</option>
+    <option>Worker</option>
+  </select>
+</div>
+
+<!-- CITIZEN PANEL -->
+<div class="panel hidden" id="citizenPanel">
+  <h3>Citizen: Report a Problem</h3>
+  <input id="cTitle" placeholder="Problem Title">
+  <textarea id="cDesc" placeholder="Problem Description"></textarea>
+
+  <select id="cCategory">
+    <option>Road</option>
+    <option>Garbage</option>
+    <option>Water</option>
+    <option>Electricity</option>
+    <option>Street Light</option>
+  </select>
+
+  <select id="cZone">
+    <option>North Zone</option>
+    <option>South Zone</option>
+    <option>East Zone</option>
+    <option>West Zone</option>
+  </select>
+
+  <select id="cPriority">
+    <option>Low</option>
+    <option>Medium</option>
+    <option>High</option>
+  </select>
+
+  <input type="file" id="cPhoto" accept="image/*">
+  <img id="cPreview" class="preview hidden">
+
+  <button onclick="submitIssue()">Submit Problem</button>
+</div>
+
+<!-- GOVERNMENT PANEL -->
+<div class="panel hidden" id="govPanel">
+  <h3>Government Official: Review & Assign</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Zone</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="govTable"></tbody>
+  </table>
+</div>
+
+<!-- WORKER PANEL -->
+<div class="panel hidden" id="workerPanel">
+  <h3>Worker: Assigned Problems</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Zone</th>
+        <th>Status</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody id="workerTable"></tbody>
+  </table>
+</div>
+
+<!-- LOGS -->
+<div class="panel">
+  <h3>System Activity Logs</h3>
+  <div class="log" id="logs"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
